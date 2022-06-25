@@ -20,6 +20,16 @@ MEANFREEPATH.cxx: a small code meant to compute the mean free path of neutron es
 
 The class Numerics.cxx is a class whose purpose is to compute as fast as possible integrals, derivatives and differential equations, working with standard C++ functions (keep in mind that this is not optimal, but was done just for clarity).
 
+# INSTALLATION:
+To use this code you need to compile it, something that can be done by using the command
+
+  "g++ EXAMPLE.cxx Numerics.cxx"
+ 
+Since the code is simple there isn't a dedicated directory for Numerics.cxx and Numerics.h; if you decided to create a separated directory you will need to:
+
+1) Modify the code so that #include "Numerics.h" becomes #include "EXAMPLEDIRECTORY/Numerics.h"
+2) Call from Command Prompt "g++ EXAMPLE.cxx EXAMPLEDIRECTORY/Numerics.cxx"
+
 # FAQ:
 **Why did you use functions and not lambdas?**
 
