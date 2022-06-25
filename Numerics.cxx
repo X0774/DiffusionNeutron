@@ -88,7 +88,7 @@ double Numerics::integration(double (*func)(double), double a, double b, double 
     
 }
 
-double Numerics::Bisection(double (*f)(double), double a, double b, double error)
+double Numerics::bisection(double (*f)(double), double a, double b, double error)
 {
 	double newpar=a+(b-a)/2;
 	
@@ -99,13 +99,13 @@ double Numerics::Bisection(double (*f)(double), double a, double b, double error
         a=z;
     }
     
-	if (abs(b-a)<abs(error) || abs(f(newpar))<abs(error))
+	if (abs(b-a)<abs(error) || abs(f(newpar))==0)
 		return newpar;
 		
 	if (f(a)*f(newpar)<=0) //Recursive condition
-		return Bisection(f,a,newpar,error);
+		return bisection(f,a,newpar,error);
 	else if (f(newpar)*f(b)<=0)
-		return Bisection(f,newpar,b,error);
+		return bisection(f,newpar,b,error);
 	else
 		{
 			cout << "Error: number of zeros in the selection is not 1";
@@ -114,13 +114,13 @@ double Numerics::Bisection(double (*f)(double), double a, double b, double error
 		
 };
 
-double Numerics::Newton(double (*func)(double), double (*funcprime)(double), double p0, double err)
+double Numerics::newton(double (*func)(double), double (*funcprime)(double), double p0, double err)
 {
     double p=p0-func(p0)/funcprime(p0);
     if ((func(p) == 0) || (abs(p-p0) < err))
         return p;
     else 
-        return Newton(func,funcprime,p,err);
+        return newton(func,funcprime,p,err);
 };
 
 double Numerics::trapezoidal(double (*f)(double), double a, double b, double h)

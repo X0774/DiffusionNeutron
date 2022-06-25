@@ -50,10 +50,10 @@ int main(int argc, char **argv)
 	mu = lambdat* v /3; 
 	eta= v *( nu -1) / lambdaf;
 	Numerics num;
-	r1=num.Bisection(criticalradius,0,10,1e-5);
+	r1=num.bisection(criticalradius,0,10,1e-5);
 	cout << endl;
 	R=8.5;
-	alpha=num.Newton(newalpha,alphaprime, 0, 1e-7);
+	alpha=num.newton(newalpha,alphaprime, 0, 1e-7);
 	
 	//COMPUTING ns
 	double n;
@@ -70,8 +70,6 @@ int main(int argc, char **argv)
 	A=1/(exp(- alpha*0)*sin(sqrt (( eta+ alpha )/mu)*(R*dx))/(R*dx));
 	newfile.open("output.txt",ios::out);
 	newfile << "n(r,t)" << "	" << "t" << "	" << "r" << endl;
-	int c=1;
-	
 	for (int c=1; c<NStep; ++c)
 	{
 		for (int i=1; i<NPoints; ++i)

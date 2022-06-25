@@ -85,4 +85,16 @@ int main(int argc, char **argv)
 	delete[] alpha;
 	return 0;
 }
-//Programmers swear to C++ pacific from the code 
+/*
+ *    _.-^^---....,,--       
+ _--                  --_  
+<                        >)
+|                         | 
+ \._                   _./  
+    ```--. . , ; .--'''       
+          | |   |             
+       .-=||  | |=-.   
+       `-=#$%&%$#=-'   
+          | ;  :|     
+ _____.,-#%&$@%#&#~,._____
+ */
