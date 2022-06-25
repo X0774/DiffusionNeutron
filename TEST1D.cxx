@@ -62,9 +62,8 @@ int main(int argc, char **argv)
 	int NStep=abs(tfin/dt);
 	newfile.open("output.txt",ios::out);
 	newfile << "n(x,t)" << "	" << "t" << "	" << "x" << endl;
-	int c=1;
-	//for (int c=1; c<NStep; ++c)
-	//{
+	for (int c=1; c<NStep; ++c)
+	{
 		for (int i=1; i<NPoints; ++i)
 		{
 			n=0; //At the end of every loop in x, n must be reset
@@ -74,7 +73,7 @@ int main(int argc, char **argv)
 			}
 			newfile << n << "	" << c*dt << "	" << 0+i*dx << endl;	
 		};
-	//};
+	};
 	newfile.close();
 	
 	delete[] a;
