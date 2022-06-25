@@ -64,6 +64,7 @@ int main(int argc, char **argv)
 	cout << Nesc << "	"<<endl;
 	Nesc=N0*exp(-sigma*n*x);
 	Nreact=N0-Nesc;
+	cout << "The number of reactions is: "<< Nreact << endl;
 	
 	//OUTPUT
 	double dx=0;
