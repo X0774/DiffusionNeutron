@@ -38,7 +38,7 @@ int main(int argc, char **argv)
 	newfile.open("config.txt",ios::in); 
 	if (newfile.is_open())
 	{
-	  newfile >> sigma >> NA>> rho >>At; //
+	  newfile >> sigma >> NA>> rho >>At; //1.235e-28 6.022e23 18.71 235.04
     } else
     {
 		exit(EXIT_FAILURE);
@@ -75,12 +75,13 @@ int main(int argc, char **argv)
 	cin>>dx;
 	cout<<endl;
 	newfile.open("output.txt",ios::out);
-	newfile << "xm(x)	Prx(x)	" << "x" << endl;
+	newfile << "Prx(x)	" << "x" << endl;
 	int NStep=abs(x/dx);
+	xm=num.integration(Int,0,x,1e-3);
+	cout<<"The expectation value is: "<<xm<<endl;
 	for (int c=1; c<NStep; ++c)
 	{
-		xm=num.integration(Int,0,c*dx,1e-3);
-		newfile << xm << "	" << prx(c*dx) <<"	"<< c*dx<<endl;	
+		newfile << prx(c*dx) <<"	"<< c*dx<<endl;	
 	};
 	newfile.close();
 	return 0;
