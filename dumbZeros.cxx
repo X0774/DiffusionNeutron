@@ -23,7 +23,7 @@ void dumbZeros(double (*func)(double), double a, double dx, const int q, double 
         do{
              c++;
         } while (func(zero+c*dx)*func(zero)>0);
-        array[i]=num.Bisection(func,zero,zero+c*dx,error);
+        array[i]=num.bisection(func,zero,zero+c*dx,error);
         zero=zero+c*dx;
     };
 };
