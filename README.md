@@ -48,6 +48,10 @@ The integration method was developed using 3/8 rule and is thus a little bit les
 
 I thought it would have been way easier to compute Bessel Functions zeros externally and save them in a vector/array that could be read by the code instead of finding them from scratch each time I needed them
 
+**What naming convention did you use?**
+
+Methods have a lower case initial letter, functions have an upper case initial letter; dumbZero and SPHERICALNEUMAN are execptions (dumbZero because it's just a sample code that should not really be considered part of the project, SPHERICALNEUMAN because I didn't like having "Alpha" instead of "alpha"). MEANFREEPATH also has a function called prx, which comes from the name given in the original paper.
+
 **The code is dumb**
 
 Yes.
