@@ -30,6 +30,7 @@ Since the code is simple there isn't a dedicated directory for Numerics.cxx and 
 1) Modify the code so that #include "Numerics.h" becomes #include "EXAMPLEDIRECTORY/Numerics.h"
 2) Call from Command Prompt "g++ EXAMPLE.cxx EXAMPLEDIRECTORY/Numerics.cxx"
 
+With the flag -Wall you can also experiment the absence of warnings!
 # FAQ:
 **Why did you use functions and not lambdas?**
 
