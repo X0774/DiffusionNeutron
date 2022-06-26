@@ -2,7 +2,7 @@
 Good morning, this is the first ReadME I have ever written, so please don't be mad if it's useless!
 
 This project is set of codes meant to reproduce the results obtained in the paper "Neutron Diffusion" (https://www.researchgate.net/publication/323035158_Neutron_diffusion) by Graham W Griffiths; the codes roughly follow the Maple Examples given in said paper, solving the problem in the same way the author did.
-I have personally created a Numerics class (keep in mind that, while this is not an optimal choice in a world where SymbolicC++ and similar lybraries exist, but I wanted to develop those methods by myself to fully comprehend them).
+I have personally created a Numerics class (keep in mind that, while this is not an optimal choice in a world where SymbolicC++ and similar lybraries exist, I wanted to develop those methods by myself to fully comprehend them).
 
 # WHAT ARE THE FILES INSIDE THIS PROJECT:
 There are 2 txt files (ignoring besselzeros, which was used to write the output of "dumbZeros.cxx", which was used to obtain Bessel's Functions zeros), which are config and output.
