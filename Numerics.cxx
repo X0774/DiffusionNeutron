@@ -8,11 +8,13 @@ using namespace std;
 
 
 double Numerics::derivative (double (*func)(double), double dx, double pointx){
+	/**A simple 5 points formula that gives the derivative of func in pointx using dx as small distance*/
 	return (func(pointx-2*dx)-8*func(pointx-dx)+8*func(pointx+dx)-func(pointx+2*dx))/(12*dx);
 };
 
 double Numerics::RK4Alg (double (*func) (double,double), double t, double y, double h)
 {
+	/**Simple algorithm made for the RK4 differential equation*/
     double k1,k2,k3,k4;
     k1=func(t,y);
     k2=func(t+h/2,y+h*k1/2);
@@ -21,8 +23,9 @@ double Numerics::RK4Alg (double (*func) (double,double), double t, double y, dou
     return y+h*(k1+2*k2+2*k3+k4)/6;
 };
 
-double Numerics::diffEq (double (*func) (double,double), double a, double b, double iniCond, double h) //RK4 Differential Equation Solver; dy/dt=func(t,y)
+double Numerics::diffEq (double (*func) (double,double), double a, double b, double iniCond, double h) 
 {
+	/**RK4 Differential Equation Solver; dy/dt=func(t,y) from a to b with y(a)=iniCond with h=distance in each step*/
     int Nstep=abs(b-a)/h;
     
     /*if (b<a)
@@ -44,6 +47,7 @@ double Numerics::diffEq (double (*func) (double,double), double a, double b, dou
 };
 
 double Numerics::secDifferentialEq (double (*func)(double, double), double (*func2)(double,double), double a, double b, double iniCond, double iniCondDer, double h){ //Simple second order differential Equation, y''=func2*y'+func(t,y)
+	/**Simple second order differential equation solver, with y''=func2*y'+func(t,y) from a to b, with y(a)=iniCond, y'(a)=iniCondDer with h=distance in each step*/
 	int Nstep=abs(b-a)/h;
 	
 	/*if (b<a)
@@ -68,6 +72,7 @@ double Numerics::secDifferentialEq (double (*func)(double, double), double (*fun
 
 double Numerics::integration(double (*func)(double), double a, double b, double h) //TO ADD double t0, (*func)(double, double)
 {
+	/**Simpson 3/8 rule for integration; fast, but not very precise. It integrates func from a to b with a step distance of h*/
     int Nstep=abs(b-a)/h;
     int N3=Nstep/3;
     
@@ -90,6 +95,7 @@ double Numerics::integration(double (*func)(double), double a, double b, double 
 
 double Numerics::bisection(double (*f)(double), double a, double b, double error)
 {
+	/**Simple Root Finding algorythm that uses bisection; it solves between a and b; if f has more than one 0 between a and b it may not give any result*/
 	double newpar=a+(b-a)/2;
 	
 	if (b<a)
@@ -116,6 +122,7 @@ double Numerics::bisection(double (*f)(double), double a, double b, double error
 
 double Numerics::newton(double (*func)(double), double (*funcprime)(double), double p0, double err)
 {
+	/**Simple Root Finding algorythm that uses Newton method; it requires a function func and its derivative funcprime. It also wants a starting point p0*/
     double p=p0-func(p0)/funcprime(p0);
     if ((func(p) == 0) || (abs(p-p0) < err))
         return p;
@@ -125,6 +132,7 @@ double Numerics::newton(double (*func)(double), double (*funcprime)(double), dou
 
 double Numerics::trapezoidal(double (*f)(double), double a, double b, double h)
 {	
+	/**Integral solver that uses the trapezoidal method; it solves between a and b with step distance h*/
 	int Nstep=abs((b-a)/h);
 	double Area=0;
 	for (int i=0;i<Nstep;++i){
@@ -135,6 +143,7 @@ double Numerics::trapezoidal(double (*f)(double), double a, double b, double h)
 
 double Numerics::trapezoidal(double (*f)(double, double), double ax, double bx, double ay, double by, double h)
 {
+	/**Integral solver that uses the trapezoidal method; it solves between [ax,bx] and [ay,by] with step distance h; it solves for y for each step of x*/
 	//We want to integrate by strings, so for constant x we integrate over y
 	
 	int Nstepx=abs((bx-ax)/h);
@@ -150,6 +159,7 @@ double Numerics::trapezoidal(double (*f)(double, double), double ax, double bx, 
 
 double Numerics::trapezoidal(double (*f)(double, double, double), double ax, double bx, double ay, double by, double az, double bz, double h)
 {
+	/**Integral solver that uses the trapezoidal method; it solves between [ax,bx], [ay,by], [az,bz] with step distance h; it solves for z for each step of y, which solves for each step of x*/
 	//We want to integrate by strings, so for constant x, y, we integrate over z
 	
 	int Nstepx=abs((bx-ax)/h);
