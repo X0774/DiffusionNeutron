@@ -1,37 +1,90 @@
-## Welcome to GitHub Pages
+Member Function Documentation
+◆ bisection()
+double Numerics::bisection	(	double(*)(double) 	f,
+double 	a,
+double 	b,
+double 	error 
+)		
+Simple Root Finding algorythm that uses bisection; it solves between a and b; if f has more than one 0 between a and b it may not give any result
 
-You can use the [editor on GitHub](https://github.com/X0774/DiffusionNeutron/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+◆ derivative()
+double Numerics::derivative	(	double(*)(double) 	func,
+double 	dx,
+double 	pointx 
+)		
+A simple 5 points formula that gives the derivative of func in pointx using dx as small distance
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+◆ diffEq()
+double Numerics::diffEq	(	double(*)(double, double) 	func,
+double 	a,
+double 	b,
+double 	iniCond,
+double 	h 
+)		
+RK4 Differential Equation Solver; dy/dt=func(t,y) from a to b with y(a)=iniCond with h=distance in each step
 
-### Markdown
+◆ integration()
+double Numerics::integration	(	double(*)(double) 	func,
+double 	a,
+double 	b,
+double 	h 
+)		
+Simpson 3/8 rule for integration; fast, but not very precise. It integrates func from a to b with a step distance of h
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+◆ newton()
+double Numerics::newton	(	double(*)(double) 	func,
+double(*)(double) 	funcprime,
+double 	p0,
+double 	err 
+)		
+Simple Root Finding algorythm that uses Newton method; it requires a function func and its derivative funcprime. It also wants a starting point p0
 
-```markdown
-Syntax highlighted code block
+◆ RK4Alg()
+double Numerics::RK4Alg	(	double(*)(double, double) 	func,
+double 	t,
+double 	y,
+double 	h 
+)		
+private
+Simple algorithm made for the RK4 differential equation
 
-# Header 1
-## Header 2
-### Header 3
+◆ secDifferentialEq()
+double Numerics::secDifferentialEq	(	double(*)(double, double) 	func,
+double(*)(double, double) 	func2,
+double 	a,
+double 	b,
+double 	iniCond,
+double 	iniCondDer,
+double 	h 
+)		
+Simple second order differential equation solver, with y''=func2*y'+func(t,y) from a to b, with y(a)=iniCond, y'(a)=iniCondDer with h=distance in each step
 
-- Bulleted
-- List
+◆ trapezoidal() [1/3]
+double Numerics::trapezoidal	(	double(*)(double) 	f,
+double 	a,
+double 	b,
+double 	h 
+)		
+Integral solver that uses the trapezoidal method; it solves between a and b with step distance h
 
-1. Numbered
-2. List
+◆ trapezoidal() [2/3]
+double Numerics::trapezoidal	(	double(*)(double, double) 	f,
+double 	ax,
+double 	bx,
+double 	ay,
+double 	by,
+double 	h 
+)		
+Integral solver that uses the trapezoidal method; it solves between [ax,bx] and [ay,by] with step distance h; it solves for y for each step of x
 
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/X0774/DiffusionNeutron/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+◆ trapezoidal() [3/3]
+double Numerics::trapezoidal	(	double(*)(double, double, double) 	f,
+double 	ax,
+double 	bx,
+double 	ay,
+double 	by,
+double 	az,
+double 	bz,
+double 	h 
+)		
+Integral solver that uses the trapezoidal method; it solves between [ax,bx], [ay,by], [az,bz] with step distance h; it solves for z for each step of y, which solves for each step of x
