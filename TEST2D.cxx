@@ -68,8 +68,8 @@ int main(int argc, char **argv)
 		for (int k=1; k<NPoints; ++k)
 		{
 			n=0; //At the end of every loop in p,q, n must be reset
-			for (p=0;p<N;++p)
-				for (q=0; q<N;++q)
+			for (p=1;p<N;++p)
+				for (q=1; q<N;++q)
 				{
 					n=n+a[p][q] * exp( eta*(t)-mu*(  pow((p*M_PI/L),2)+pow((q*M_PI/L),2)  )*(t))  *  sin(p*M_PI*i*dx/L) * sin(q*M_PI*k*dx/L);
 				}
