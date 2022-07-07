@@ -77,8 +77,6 @@ int main(int argc, char **argv)
 	newfile.close();
 	
 	delete[] a;
-	double l;
-	cin >> l;
 	return 0;
 }
 
