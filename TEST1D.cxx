@@ -12,7 +12,7 @@ int p=0;
 
 double Function (double x)
 {
-	return A*exp( -lambda*(((x-L/2)/(L/2)))*((x-L/2)/(L/2)) );
+	return A*exp( -lambda*(pow(((x-L/2)/(L/2)),2) ));
 };
 
 double Int (double x)
@@ -52,6 +52,7 @@ int main(int argc, char **argv)
 	double dx; //0.001
 	double tfin; //0.00002;
 	double dt; //0.0000001;
+	double t,x;
 	cout << "dx: ";
 	cin >> dx;
 	cout << "t: ";
@@ -64,14 +65,17 @@ int main(int argc, char **argv)
 	newfile << "n(x,t)" << "	" << "t" << "	" << "x" << endl;
 	for (int c=1; c<NStep; ++c)
 	{
+		t=c*dt;
 		for (int i=1; i<NPoints; ++i)
 		{
+			x=i*dx;
 			n=0; //At the end of every loop in x, n must be reset
-			for (p=0;p<N;++p)
+			for (p=1;p<N;++p)
 			{
-				n=n+a[p]*exp(eta*(c*dt)-mu*(p*M_PI/L)*(p*M_PI/L)*(c*dt))*sin(p*M_PI*i*dx/L);
-			}
-			newfile << n << "	" << c*dt << "	" << 0+i*dx << endl;	
+				//n=n+a[p]*exp(  eta*c*dt - mu*pow((p*M_PI/L),2)*c*dt )*sin( p*M_PI*i*dx / L );
+				n=n+a[p]* exp ( eta *t - mu *pow(( p * M_PI / L ),2)* t ) * sin ( p * M_PI * x / L );
+			};
+			newfile << n << "	" << t << "	" << 0+x << endl;	
 		};
 	};
 	newfile.close();
