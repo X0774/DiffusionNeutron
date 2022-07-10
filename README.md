@@ -11,11 +11,17 @@ Output.txt serves the purpose of writing the output of the codes, which can then
 
 There are also 8 .cxx files (without considering dumbZeros.cxx), which are:
 TEST1D.cxx: a small code meant to reproduce the neutron density of a 1-dimensional string of fissile material with L=L(critical); it produces an output of n(t,x)
+
 TEST2D.cxx: same as TEST1D.cxx, but in 2 dimensions; it produces an output of n(t,x,y) with t fixed
+
 Cartesian3D.cxx: same as TEST2D and TEST1D; it produces an output of n(t,x,y,z)
+
 Cylindrical3D.cxx: code meant to reproduce the neutron density of a 3-dimensional cylinder of fissile material; it produces an output of n(t,r,z) with t fixed
+
 Spherical3D.cxx: code meant to reproduce the neutron density of a 3-dimensional sphere of fissile material; it produces an output of n(t,r). it must be noted that I obtained results slightly different from the one obtained in the paper
+
 SPHERICALNEUMAN.cxx: code meant to reproduce a sphere of fissile material with Neuman Boundary Conditions; it produces an output of n(t,r)
+
 MEANFREEPATH.cxx: a small code meant to compute the mean free path of neutron escaping or reacting in the core; the output is the probability density function of neutron initiating a reaction in the block
 
 The class Numerics.cxx is a class whose purpose is to compute as fast as possible integrals, derivatives and differential equations, working with standard C++ functions (keep in mind that this is not optimal, but was done just for clarity).
