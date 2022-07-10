@@ -1,7 +1,6 @@
 /*
  *i want to preface this code by saying that the original Maple code does not give the same result as this code, there is no way it can
- * 1) The a[p] are too small of a factor of 1/2; I solved the integral with various tools and observed this
- * 2) n seems to grow way faster with time compared to what was shown; on a sidenote, the paper obtains values that are way too high
+ * The a[p] are too small of a factor of 1/2; I solved the integral with various tools and observed this
  * I can not obtain the results of the paper, I probably messed with the constants
  */
 
@@ -46,7 +45,7 @@ int main(int argc, char **argv)
 		exit(EXIT_FAILURE);
 	}
     newfile.close(); //close the file object.
-
+	
 	////COMPUTE a[p][q][r]
 	double* a=new double [N]; //We don't need the dependency on p, we can show this later	
 	Numerics num;
