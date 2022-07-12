@@ -1,6 +1,6 @@
 /*
  *i want to preface this code by saying that the original Maple code does not give the same result as this code, there is no way it can
- * The a[p] are too small of a factor of 1/2; I solved the integral with various tools and observed this
+ * 1) The a[p] are too small of a factor of 1/2; I solved the integral with various tools and observed this
  * I can not obtain the results of the paper, I probably messed with the constants
  */
 
@@ -47,7 +47,7 @@ int main(int argc, char **argv)
     newfile.close(); //close the file object.
 	
 	////COMPUTE a[p][q][r]
-	double* a=new double [N]; //We don't need the dependency on p, we can show this later	
+	double* a=new double [N]; 
 	Numerics num;
 	for (p=0;p<N;++p)
 	{
