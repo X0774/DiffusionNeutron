@@ -10,11 +10,6 @@ double A=1; //it serves no purpose but existing
 double alpha=0; //If we want criticality
 double k=0;
 
-double rFunc(double t, double x)
-{
-	return (eta+alpha)*x/mu;
-};
-
 double Rfunc (double r){
 	return (A*sin(k*r))/r; 
 };
