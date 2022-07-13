@@ -32,21 +32,21 @@ int main(int argc, char **argv)
 	if (newfile.is_open())
 	{
 	  newfile >> L >> A >> N >> mu >> eta; //0.192 1 5 2.3446e+05 1.8958e+8
-    } else
-    {
+    	} else
+    	{
 		exit(EXIT_FAILURE);
 	}
-      newfile.close(); //close the file object.
+     	newfile.close(); //close the file object.
 	
 	
 	////COMPUTE a[p][q][r]
 	double*** a=new double** [N];
-		for (int i=0;i<N;++i)
-			{
-				a[i]=new double* [N];
-				for (int c=0; c<N; ++c)
-					a[i][c]=new double [N];
-			}		
+	for (int i=0;i<N;++i)
+		{
+			a[i]=new double* [N];
+			for (int c=0; c<N; ++c)
+				a[i][c]=new double [N];
+		}		
 	Numerics num;
 	double n;
 	for (p=0;p<N;++p)
@@ -79,9 +79,9 @@ int main(int argc, char **argv)
 			{
 				n=0; //At the end of every loop in p,q,r, n must be reset
 				for (p=0;p<N;++p)
-					for (q=0; q<N;++q)
-						for (r=0; r<N; ++r)
-							n=n+a[p][q][r] * exp( eta*(t)-mu*(  pow((p*M_PI/L),2)+pow((q*M_PI/L),2)+pow((r*M_PI/L),2) )*(t))  *  sin(p*M_PI*i*dx/L) * sin(q*M_PI*k*dx/L) * sin(r*M_PI*l*dx/L);
+				for (q=0; q<N;++q)
+				for (r=0; r<N; ++r) //Indentation convention changed here for readability
+					n=n+a[p][q][r] * exp( eta*(t)-mu*(  pow((p*M_PI/L),2)+pow((q*M_PI/L),2)+pow((r*M_PI/L),2) )*(t))  *  sin(p*M_PI*i*dx/L) * sin(q*M_PI*k*dx/L) * sin(r*M_PI*l*dx/L);
 				newfile << n << "	" << 0+i*dx << "	" << 0+k*dx << "	" << 0+l*dx << endl;
 			};	
 	newfile.close();
