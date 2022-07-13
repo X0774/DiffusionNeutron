@@ -49,7 +49,7 @@ I feel like arrays are more intuitive and are generally faster
 
 **Why did you use trapezoidal instead of the integration method, which is faster?**
 
-The integration method was developed using 3/8 rule and is thus a little bit less precise; I didn't need speed since the code worked pretty fast, so I kept using the Trapezoidal method
+The integration method was developed using Simpson's 3/8 rule and is thus a little bit less precise; I didn't need speed since the code worked pretty fast, so I kept using the Trapezoidal method
 
 **Why are the bessel function zeros obtained with outside the code of Cylindrical3D.cxx?**
 
