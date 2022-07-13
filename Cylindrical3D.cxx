@@ -33,11 +33,11 @@ int main(int argc, char **argv)
 	if (newfile.is_open())
 	{
 	  newfile >> L >> r1 >> A >> N >> mu >> eta; //0.192 0.104 1 11 2.3446e+05 1.8958e+8
-    } else
-    {
+   	} else
+    	{
 		exit(EXIT_FAILURE);
 	}
-    newfile.close(); //close the file object.
+    	newfile.close(); //close the file object.
 
 	alpha=new double[N];
 	newfile.open("besselzeros.txt",ios::in);
