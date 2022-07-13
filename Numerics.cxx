@@ -39,10 +39,10 @@ double Numerics::diffEq (double (*func) (double,double), double a, double b, dou
     double yii;
     double t=a;
     for (int i=0; i<Nstep;++i)
-        {
-            yii=RK4Alg(func,t,yi,h);
-            t=t+h;
-        }
+    {
+    	yii=RK4Alg(func,t,yi,h);
+        t=t+h;
+    }
     return yii;    
 };
 
@@ -136,7 +136,8 @@ double Numerics::trapezoidal(double (*f)(double), double a, double b, double h)
 	/**Integral solver that uses the trapezoidal method; it solves between a and b with step distance h*/
 	int Nstep=abs((b-a)/h);
 	double Area=0;
-	for (int i=0;i<Nstep;++i){
+	for (int i=0;i<Nstep;++i)
+	{
 		Area=Area+(f(a+(i+1)*h)-f(a+i*h))*h/2+f(a+i*h)*h;
 	}
 	return Area;
