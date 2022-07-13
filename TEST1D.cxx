@@ -28,8 +28,7 @@ int main(int argc, char **argv)
 	newfile.open("config.txt",ios::in);
 	if (newfile.is_open())
 	{
-	  newfile >> L >> A >> lambda >> N >> mu >> eta; //0.111 1 100 30 2.3446e+05 1.8958e+8 are the suggested values
-      
+		newfile >> L >> A >> lambda >> N >> mu >> eta; //0.111 1 100 30 2.3446e+05 1.8958e+8 are the suggested values
     	} else
     	{
 		exit(EXIT_FAILURE);
