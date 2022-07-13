@@ -40,11 +40,11 @@ int main(int argc, char **argv)
 	if (newfile.is_open())
 	{
 	  newfile >> r1 >> A>> lambda >> N >> mu >> eta; //0.115 1 100 31 2.3446e+05 1.8958e+8; A and lambda are if you want to use Gaussian
-    } else
-    {
+    	} else
+    	{
 		exit(EXIT_FAILURE);
 	}
-    newfile.close(); //close the file object.
+    	newfile.close(); //close the file object.
 	
 	////COMPUTE a[p][q][r]
 	double* a=new double [N]; 
