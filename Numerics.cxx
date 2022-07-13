@@ -25,7 +25,7 @@ double Numerics::RK4Alg (double (*func) (double,double), double t, double y, dou
 
 double Numerics::diffEq (double (*func) (double,double), double a, double b, double iniCond, double h) 
 {
-	/**RK4 Differential Equation Solver; dy/dt=func(t,y) from a to b with y(a)=iniCond with h=distance in each step*/
+    /**RK4 Differential Equation Solver; dy/dt=func(t,y) from a to b with y(a)=iniCond with h=distance in each step*/
     int Nstep=abs(b-a)/h;
     
     /*if (b<a)
@@ -51,11 +51,11 @@ double Numerics::secDifferentialEq (double (*func)(double, double), double (*fun
 	int Nstep=abs(b-a)/h;
 	
 	/*if (b<a)
-    {
-        double z=b;
-        b=a;
-        a=z;
-    }*/
+    	{
+        	double z=b;
+        	b=a;
+        	a=z;
+    	}*/
 	
 	double z=iniCond;
 	double x=z+iniCondDer*h; //yii=yi+y'*dx	
@@ -72,7 +72,7 @@ double Numerics::secDifferentialEq (double (*func)(double, double), double (*fun
 
 double Numerics::integration(double (*func)(double), double a, double b, double h) //TO ADD double t0, (*func)(double, double)
 {
-	/**Simpson 3/8 rule for integration; fast, but not very precise. It integrates func from a to b with a step distance of h*/
+    /**Simpson 3/8 rule for integration; fast, but not very precise. It integrates func from a to b with a step distance of h*/
     int Nstep=abs(b-a)/h;
     int N3=Nstep/3;
     
@@ -99,11 +99,11 @@ double Numerics::bisection(double (*f)(double), double a, double b, double error
 	double newpar=a+(b-a)/2;
 	
 	if (b<a)
-    {
-        double z=b;
-        b=a;
-        a=z;
-    }
+    	{
+        	double z=b;
+        	b=a;
+        	a=z;
+    	}
     
 	if (abs(b-a)<abs(error) || abs(f(newpar))==0)
 		return newpar;
@@ -113,16 +113,16 @@ double Numerics::bisection(double (*f)(double), double a, double b, double error
 	else if (f(newpar)*f(b)<=0)
 		return bisection(f,newpar,b,error);
 	else
-		{
-			cout << "Error: number of zeros in the selection is not 1";
-			return a;
-		}
+	{
+		cout << "Error: number of zeros in the selection is not 1";
+		return a;
+	}
 		
 };
 
 double Numerics::newton(double (*func)(double), double (*funcprime)(double), double p0, double err)
 {
-	/**Simple Root Finding algorythm that uses Newton method; it requires a function func and its derivative funcprime. It also wants a starting point p0*/
+    /**Simple Root Finding algorythm that uses Newton method; it requires a function func and its derivative funcprime. It also wants a starting point p0*/
     double p=p0-func(p0)/funcprime(p0);
     if ((func(p) == 0) || (abs(p-p0) < err))
         return p;
