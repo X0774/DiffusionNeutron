@@ -38,8 +38,8 @@ int main(int argc, char **argv)
 	
 	//GENERATING a[p][q]
 	double** a=new double* [N];
-		for (int i=0;i<N;++i)
-			a[i]=new double[N];		
+	for (int i=0;i<N;++i)
+		a[i]=new double[N];		
 			
 	Numerics num;
 	double n;
