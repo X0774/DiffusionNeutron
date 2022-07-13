@@ -38,7 +38,7 @@ int main(int argc, char **argv)
 	newfile.open("config.txt",ios::in); 
 	if (newfile.is_open())
 	{
-	  newfile >> tau >> lambdaf >> lambdat >> nu; // 8.6349e-9 0.1689*100 0.0360*100 2.637
+		newfile >> tau >> lambdaf >> lambdat >> nu; // 8.6349e-9 0.1689*100 0.0360*100 2.637
     	} else
     	{
 		exit(EXIT_FAILURE);
