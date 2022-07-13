@@ -30,11 +30,11 @@ int main(int argc, char **argv)
 	{
 	  newfile >> L >> A >> lambda >> N >> mu >> eta; //0.111 1 100 30 2.3446e+05 1.8958e+8 are the suggested values
       
-    } else
-    {
+    	} else
+    	{
 		exit(EXIT_FAILURE);
 	}
-      newfile.close(); //close the file object.
+      	newfile.close(); //close the file object.
 	
 	
 	
