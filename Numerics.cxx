@@ -60,7 +60,8 @@ double Numerics::secDifferentialEq (double (*func)(double, double), double (*fun
 	double z=iniCond;
 	double x=z+iniCondDer*h; //yii=yi+y'*dx	
 	double yiii,yii,yi; //yi is j-1, yii is j, yiii is j+1
-	for (int i=0;i<Nstep;++i){
+	for (int i=0;i<Nstep;++i)
+	{
 		yi=z;
 		yii=x;
 		yiii=2*yii-yi+h*h*func(a+i*h,yii)+func2(a+i*h,yii)*(yii-yi)*h;
