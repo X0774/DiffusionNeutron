@@ -60,8 +60,5 @@ I thought it would have been way easier to compute Bessel Functions zeros extern
 Methods have a lower case initial letter, functions have an upper case initial letter; dumbZero and SPHERICALNEUMAN are execptions (dumbZero because it's just a sample code that should not really be considered part of the project, SPHERICALNEUMAN because I didn't like having "Alpha" instead of "alpha"). MEANFREEPATH also has a function called prx, which comes from the name given in the original paper.
 
 **What indentation convention did you use?**
+
 I used tabs for every new scope
-
-**The code is dumb and nobody ever asked those questions**
-
-Yes.
