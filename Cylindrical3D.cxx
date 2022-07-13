@@ -10,7 +10,6 @@ using namespace std;
 double L,r1,A,mu,eta; 
 int N;
 double* alpha; //alpha[q] is the q-th zero of the bessel function of zeroth kind; we don't need to compute them each time we need them, so we are going to read them from an input file
-//A sample code showing the dumbest way to derive said zeros using bisection is given
 int p=1; 
 int q=0;
 
