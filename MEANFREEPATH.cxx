@@ -39,12 +39,12 @@ int main(int argc, char **argv)
 	if (newfile.is_open())
 	{
 	  newfile >> sigma >> NA>> rho >>At; //1.235e-28 6.022e23 18.71 235.04
-    } else
-    {
+    	} else
+    	{
 		exit(EXIT_FAILURE);
 	}
-    newfile.close(); //close the file object.
-    n=( rho * NA/ At ) *pow(10,6) ;
+    	newfile.close(); //close the file object.
+    	n=( rho * NA/ At ) *pow(10,6) ;
 	
 	//Computing some quantities
 	s=1e-5; //Must be small
