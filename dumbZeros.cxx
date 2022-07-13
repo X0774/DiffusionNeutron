@@ -14,9 +14,9 @@ using namespace std;
 
 void dumbZeros(double (*func)(double), double a, double dx, const int q, double error,double *array)
 {
-    double zero=a;
-    int c;
-    Numerics num;
+    	double zero=a;
+    	int c;
+    	Numerics num;
 	for (int i=0; i<q; ++i)
 	{
         c=0;
