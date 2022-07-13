@@ -19,13 +19,13 @@ void dumbZeros(double (*func)(double), double a, double dx, const int q, double 
     	Numerics num;
 	for (int i=0; i<q; ++i)
 	{
-        c=0;
-        do{
-             c++;
-        } while (func(zero+c*dx)*func(zero)>0);
-        array[i]=num.bisection(func,zero,zero+c*dx,error);
-        zero=zero+c*dx;
-    };
+        	c=0;
+        	do{
+             		c++;
+        	} while (func(zero+c*dx)*func(zero)>0);
+        	array[i]=num.bisection(func,zero,zero+c*dx,error);
+        	zero=zero+c*dx;
+    	};
 };
 
 int main()
