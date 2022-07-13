@@ -14,7 +14,7 @@ double Numerics::derivative (double (*func)(double), double dx, double pointx){
 
 double Numerics::RK4Alg (double (*func) (double,double), double t, double y, double h)
 {
-	/**Simple algorithm made for the RK4 differential equation*/
+    /**Simple algorithm made for the RK4 differential equation*/
     double k1,k2,k3,k4;
     k1=func(t,y);
     k2=func(t+h/2,y+h*k1/2);
