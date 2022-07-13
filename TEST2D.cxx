@@ -29,7 +29,7 @@ int main(int argc, char **argv)
 	newfile.open("config.txt",ios::in); 
 	if (newfile.is_open())
 	{
-	  newfile >> L >> A >> lambda >> N >> mu >> eta; //15.7 1 100 6 2.3446e+05 1.8958e+8
+		newfile >> L >> A >> lambda >> N >> mu >> eta; //15.7 1 100 6 2.3446e+05 1.8958e+8
     	} else
     	{
 		exit(EXIT_FAILURE);
