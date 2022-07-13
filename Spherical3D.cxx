@@ -39,7 +39,7 @@ int main(int argc, char **argv)
 	newfile.open("config.txt",ios::in); 
 	if (newfile.is_open())
 	{
-	  newfile >> r1 >> A>> lambda >> N >> mu >> eta; //0.115 1 100 31 2.3446e+05 1.8958e+8; A and lambda are if you want to use Gaussian
+		newfile >> r1 >> A>> lambda >> N >> mu >> eta; //0.115 1 100 31 2.3446e+05 1.8958e+8; A and lambda are if you want to use Gaussian
     	} else
     	{
 		exit(EXIT_FAILURE);
