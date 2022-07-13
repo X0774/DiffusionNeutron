@@ -38,7 +38,7 @@ int main(int argc, char **argv)
 	newfile.open("config.txt",ios::in); 
 	if (newfile.is_open())
 	{
-	  newfile >> sigma >> NA>> rho >>At; //1.235e-28 6.022e23 18.71 235.04
+		newfile >> sigma >> NA>> rho >>At; //1.235e-28 6.022e23 18.71 235.04
     	} else
     	{
 		exit(EXIT_FAILURE);
