@@ -21,7 +21,7 @@ Cylindrical3D.cxx: code meant to reproduce the neutron density of a 3-dimensiona
 Spherical3D.cxx: code meant to reproduce the neutron density of a 3-dimensional sphere of fissile material; it produces an output of n(t,r). it must be noted that I obtained results slightly different from the one obtained in the paper
 
 SPHERICALNEUMAN.cxx: code meant to reproduce a sphere of fissile material with Neuman Boundary Conditions; it produces an output of n(t,r).
-Notice that there is another file (alternativer1computation) which shows how one can compute r1 by solving Neumann Boundary Condition's equation (for alpha=1, so assuming criticality)
+Notice that there is another file (alternativer1computation) which shows how one can compute r1 by solving Neumann Boundary Condition's equation (for alpha=0, so assuming criticality)
 
 MEANFREEPATH.cxx: a small code meant to compute the mean free path of neutron escaping or reacting in the core; the output is the probability density function of neutron initiating a reaction in the block
 
