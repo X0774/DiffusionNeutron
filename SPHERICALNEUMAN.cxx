@@ -1,3 +1,10 @@
+/*
+ * Symbolic computations are not supported and thus I will not follow some of the computations; I will also need to "cheat" the system in order to obtain some of the results
+ * that could have been obtained with Mathematica, Matlab or Maple
+ * 
+ * For C++ we have SymbolicC++, which is a very good way to implement symbolic computations (but, since the numerical part is literally what the project is about, it would be cheating!)
+ */ 
+
 #include <iostream>
 #include <cmath> 
 #include <math.h> 
@@ -47,11 +54,12 @@ int main(int argc, char **argv)
 	r1=num.bisection(criticalradius,0,10,1e-5);
 	cout << endl;
 	R=8.5;
-	alpha=num.newton(newalpha,alphaprime, -1e8, 1e-7);
-	cout << alpha << "	" << newalpha(alpha)<< endl;
+	alpha=num.newton(newalpha,alphaprime, 0, 1e-8);
+	//alpha=num.bisection(newalpha,-1e8,1e-6,1e-5);
 	
 	//COMPUTING ns
 	double n;
+	double k = sqrt (( eta + alpha ) / mu ) ;
 	cout << "This is now a small test for x and t; please write dx, final t and dt" << endl;
 	double dx,tfin,dt,A;
 	cout << "dx: ";
@@ -62,7 +70,7 @@ int main(int argc, char **argv)
 	cin >> dt;
 	int NPoints=2*abs(R/dx);
 	int NStep=abs(tfin/dt);
-	A=1/(exp(- alpha*0)*sin(sqrt (( eta+ alpha )/mu)*(R*dx))/(R*dx));
+	A=1/ (sin ( k * R ) / R);
 	newfile.open("output.txt",ios::out);
 	newfile << "n(r,t)" << "	" << "t" << "	" << "r" << endl;
 	for (int c=1; c<NStep; ++c)
@@ -70,7 +78,7 @@ int main(int argc, char **argv)
 		for (int i=1; i<NPoints; ++i)
 		{
 			n=0; //At the end of every loop in x, n must be reset
-			n=A*exp(- alpha *c*dt)*sin(sqrt (( eta+ alpha )/mu)*(-R+i*dx))/(-R+i*dx);
+			n=A*exp(- alpha *c*dt)*sin(k*(-R+i*dx))/(-R+i*dx);
 			newfile << n << "	" << c*dt << "	" << -R+i*dx << endl;	
 		};
 	};
