@@ -77,7 +77,6 @@ int main(int argc, char **argv)
 	{
 		for (int i=1; i<NPoints; ++i)
 		{
-			n=0; //At the end of every loop in x, n must be reset
 			n=A*exp(- alpha *c*dt)*sin(k*(-R+i*dx))/(-R+i*dx);
 			newfile << n << "	" << c*dt << "	" << -R+i*dx << endl;	
 		};
