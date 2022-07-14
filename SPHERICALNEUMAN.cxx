@@ -39,8 +39,8 @@ int main(int argc, char **argv)
 	}
     	newfile.close(); //close the file object.
     
-    //COMPUTING MU, ETA AND CRITICAL RADIUS
-    v=lambdaf/tau;
+    	//COMPUTING MU, ETA AND CRITICAL RADIUS
+    	v=lambdaf/tau;
 	mu = lambdat* v /3; 
 	eta= v *( nu -1) / lambdaf;
 	Numerics num;
