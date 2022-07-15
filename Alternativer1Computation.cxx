@@ -45,7 +45,6 @@ int main(int argc, char **argv)
 	eta= v *( nu -1) / lambdaf;
 	k=sqrt((eta+alpha)/mu);
 	Numerics num;
-	//r1=num.bisection(criticalradius,0,10,1e-5);
 	r1=num.bisection(neumannBC,0,10,1e-5);
 	cout <<r1<< endl;
 	return 0;
