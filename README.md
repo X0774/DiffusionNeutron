@@ -71,7 +71,7 @@ Yes
 
 It would be entirely possible to create an output class containing a Draw method that, given t,x and a function of n, can print on an external output file the neutron density; we would need to do the following:
 
-1) p,q and r must be on-scope for the entirety of the code, which means we would have to pass them by reference (so that we can change them inside the method)
+1) p,q and r must be on-scope for the entirety of the code, which means we would have to pass them by reference (so that we can change them inside the method); IMPORTANT: this can be circumvented by putting p, q and r in the function for neutron density
 
 2) We would need to pass a function to the method so that the method
 
