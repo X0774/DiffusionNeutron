@@ -4,6 +4,8 @@
 #include <fstream>
 #include "Numerics.h"
 using namespace std;
+
+//DEFINITION OF VARIABLES NEEDED IN ALL SCOPES
 double R0, sigmaArea, s, n, sigma, NA, N0, rho, At;
 
 double Prx (double x)
