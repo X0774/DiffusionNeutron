@@ -5,6 +5,7 @@
 #include "Numerics.h"
 using namespace std;
 
+//DEFINITION OF VARIABLES NEEDED IN ALL SCOPES
 double eta,mu,lambdat,r1,R;
 double A=1; //it serves no purpose but existing
 double alpha=0; //If we want criticality
