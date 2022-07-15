@@ -6,7 +6,7 @@
 
 using namespace std;
 
-//DEFINITION OF VARIABLES
+//DEFINITION OF VARIABLES NEEDED IN ALL SCOPES
 double L,A,mu,eta;
 int N;
 int p=0; //p,q,r must be on scope and must thus be defined before the code
