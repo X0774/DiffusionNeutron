@@ -48,7 +48,7 @@ int main(int argc, char **argv)
 	newfile.close();
 	
 	////COMPUTE a[p][q][r]
-	double* a=new double [N]; //We don't need the dependency on p, we can show this later	
+	double* a=new double [N]; //We don't need the dependency on p	
 	Numerics num;
 	double n;
 	for (q=0;q<N;++q)
