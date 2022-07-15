@@ -5,7 +5,8 @@
 #include "Numerics.h"
 
 using namespace std;
-//DEFINITION OF VARIABLES
+
+//DEFINITION OF VARIABLES ON ALL SCOPES
 double L,A,lambda,mu,eta;
 int N;
 int p=0;
@@ -61,12 +62,12 @@ int main(int argc, char **argv)
 	newfile.open("config.txt",ios::in);
 	if (newfile.is_open())
 	{
-	  newfile >> L >> A >> lambda >> N >> mu >> eta; //0.111 1 100 31 2.3446e+05 1.8958e+8 are the suggested values  
-  } else
-  {
-    exit(EXIT_FAILURE);
+		newfile >> L >> A >> lambda >> N >> mu >> eta; //0.111 1 100 31 2.3446e+05 1.8958e+8 are the suggested values  
+  	} else
+  	{
+   		exit(EXIT_FAILURE);
 	}
-  newfile.close(); //close the file object.
+	newfile.close(); //close the file object.
 	
 	
 	//COMPUTE a[p]
