@@ -42,11 +42,11 @@ int main(int argc, char **argv)
 	////COMPUTE a[p][q][r]
 	double*** a=new double** [N];
 	for (int i=0;i<N;++i)
-		{
-			a[i]=new double* [N];
-			for (int c=0; c<N; ++c)
-				a[i][c]=new double [N];
-		}		
+	{
+		a[i]=new double* [N];
+		for (int c=0; c<N; ++c)
+			a[i][c]=new double [N];
+	}		
 	Numerics num;
 	double n;
 	for (p=0;p<N;++p)
