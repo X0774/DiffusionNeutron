@@ -5,7 +5,8 @@
 #include "Numerics.h"
 
 using namespace std;
-//DEFINITION OF VARIABLES
+
+//DEFINITION OF VARIABLES THAT MUST BE ON ALL SCOPES
 double L,A,lambda,mu,eta;
 int N;
 int p=0;
