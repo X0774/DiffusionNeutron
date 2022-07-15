@@ -37,7 +37,8 @@ int main(int argc, char **argv)
 		exit(EXIT_FAILURE);
 	}
     	newfile.close(); //close the file object.
-
+	
+	//READING alpha
 	alpha=new double[N];
 	newfile.open("besselzeros.txt",ios::in);
 	for (int i=0; i<N; ++i)
