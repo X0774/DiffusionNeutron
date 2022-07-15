@@ -5,7 +5,8 @@
 #include "Numerics.h"
 
 using namespace std;
-//DEFINITION OF VARIABLES
+
+//DEFINITION OF VARIABLES ON ALL SCOPES
 double L,A,lambda,mu,eta;
 int N;
 int p=0; //since p,q are used outside of the main we need to predefine p,q in order for them to be in every function's scope
@@ -36,11 +37,10 @@ int main(int argc, char **argv)
 	}
       	newfile.close(); //close the file object.
 	
-	//GENERATING a[p][q]
+	//COMPUTING a[p][q]
 	double** a=new double* [N];
 	for (int i=0;i<N;++i)
 		a[i]=new double[N];		
-			
 	Numerics num;
 	double n;
 	for (p=0;p<N;++p)
