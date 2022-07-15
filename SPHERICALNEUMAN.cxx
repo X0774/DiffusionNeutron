@@ -55,7 +55,6 @@ int main(int argc, char **argv)
 	cout << endl;
 	R=8.5;
 	alpha=num.newton(newalpha,alphaprime, 0, 1e-8);
-	//alpha=num.bisection(newalpha,-1e8,1e-6,1e-5);
 	
 	//COMPUTING ns
 	double n;
