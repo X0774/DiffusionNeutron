@@ -24,12 +24,12 @@ double Int (double x)
 
 double neutrondensity(double t,double x,double y,double z)
 {
-			double n=0;
-			for (p=1;p<N;++p)
-			{
-				n=n+a[p]* exp ( eta *t - mu *pow(( p * M_PI / L ),2)* t ) * sin ( p * M_PI * x / L );
-			};
-			return n;
+	double n=0;
+	for (p=1;p<N;++p)
+	{
+		n=n+a[p]* exp ( eta *t - mu *pow(( p * M_PI / L ),2)* t ) * sin ( p * M_PI * x / L );
+	};
+	return n;
 };
 
 void plot(double (*func)(double, double, double, double), double tin, double tfin, double xin, double xfin, double yin, double yfin, double zin, double zfin, double dt, double dx)
