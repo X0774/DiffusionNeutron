@@ -35,7 +35,6 @@ int main()
     dumbZeros(j0,0,0.00001,N,0.00001,array);
     fstream newfile;
     newfile.open("besselzeros.txt",ios::out);
-    cout << "ciao";
     for (int i=0;i<N; ++i)
         newfile << array[i] << "	";
     newfile.close();
