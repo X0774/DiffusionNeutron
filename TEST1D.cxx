@@ -35,8 +35,7 @@ int main(int argc, char **argv)
 	}
       	newfile.close(); //close the file object.
 	
-	
-	
+	//COMPUTING a[p]
 	double *a=new double[N];
 	Numerics num;
 	double n;
