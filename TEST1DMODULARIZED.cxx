@@ -75,7 +75,7 @@ int main(int argc, char **argv)
 	Numerics num;
 	for (p=0;p<N;++p)
 	{
-	  a[p]=num.trapezoidal(Int,0,L,0.0001); 
+		a[p]=num.trapezoidal(Int,0,L,0.0001); 
 		cout << a[p] << "	";
 	}
 	
