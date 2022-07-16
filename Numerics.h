@@ -13,6 +13,7 @@
 		double diffEq (double (*func) (double,double), double a, double b, double iniCond, double h);
 		double secDifferentialEq (double (*func)(double, double), double (*func2)(double,double), double a, double b, double iniCond, double iniCondDer, double h);
 		double integration(double (*func)(double), double a, double b, double h);
+		double integrationSimpsRule(double (*func)(double), double a, double b, double h);
 		double bisection(double (*f)(double), double a, double b, double error);
 		double trapezoidal(double (*f)(double), double a, double b, double h);
 		double trapezoidal(double (*f)(double, double), double ax, double bx, double ay, double by, double h);
