@@ -54,7 +54,7 @@ int main(int argc, char **argv)
 	r1=num.bisection(criticalradius,0,10,1e-5);
 	cout << endl;
 	R=8.5;
-	alpha=num.newton(newalpha,alphaprime, 0, 1e-8);
+	alpha=num.newton(newalpha,alphaprime, 0, 1e-8,100);
 	
 	//COMPUTING ns
 	double n;
