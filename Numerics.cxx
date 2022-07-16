@@ -5,8 +5,6 @@
 
 using namespace std;
 
-
-
 double Numerics::derivative (double (*func)(double), double dx, double pointx){
 	/**A simple 5 points formula that gives the derivative of func in pointx using dx as small distance*/
 	return (func(pointx-2*dx)-8*func(pointx-dx)+8*func(pointx+dx)-func(pointx+2*dx))/(12*dx);
@@ -45,9 +43,7 @@ double Numerics::secDifferentialEq (double (*func)(double, double), double (*fun
 	
 	/*if (b<a)
 	{
-		double z=b;
-		b=a;
-		a=z;
+		swap(a,b);
 	}*/
 	
 	double z=iniCond;
@@ -70,12 +66,8 @@ double Numerics::integration(double (*func)(double), double a, double b, double 
 	int N3=Nstep/3;
 	
 	if (b<a)
-	{
-		double z=b;
-		b=a;
-		a=z;
-	}
-
+		swap(a,b);
+	
 	double sum=0;
 	
 	for (int i=0;i<N3;++i)
@@ -88,14 +80,12 @@ double Numerics::integration(double (*func)(double), double a, double b, double 
 
 double Numerics::integrationSimpsRule(double (*func)(double), double a, double b, double h) //TO ADD double t0, (*func)(double, double)
 {
-	/**Simpson 1/3 rule for integration. It integrates func from a to b with a step distance of h*/
+	/**Simpson 1/3 rule for integration; It integrates func from a to b with a step distance of h*/
 	int Nstep=abs(b-a)/(2*h);
 	
 	if (b<a)
 	{
-		double z=b;
-		b=a;
-		a=z;
+		swap(a,b);
 	}
 
 	double sum=func(a)+func(b);
@@ -116,9 +106,7 @@ double Numerics::bisection(double (*f)(double), double a, double b, double error
 	
 	if (b<a)
 	{
-		double z=b;
-		b=a;
-		a=z;
+		swap(a,b);
 	}
 	
 	if (abs(b-a)<abs(error) || abs(f(newpar))==0)
@@ -149,6 +137,10 @@ double Numerics::trapezoidal(double (*f)(double), double a, double b, double h)
 {	
 	/**Integral solver that uses the trapezoidal method; it solves between a and b with step distance h*/
 	int Nstep=abs((b-a)/h);
+	
+	if (b<a)
+		swap(a,b);
+	
 	double Area=0;
 	for (int i=0;i<Nstep;++i){
 		Area=Area+(f(a+(i+1)*h)-f(a+i*h))*h/2+f(a+i*h)*h;
@@ -163,6 +155,17 @@ double Numerics::trapezoidal(double (*f)(double, double), double ax, double bx, 
 	
 	int Nstepx=abs((bx-ax)/h);
 	int Nstepy=abs((by-ay)/h);	
+	
+	if (bx<ax)
+	{
+		swap(ax,bx);
+	};
+	
+	if (by<ay)
+	{
+		swap(ay,by);
+	};
+	
 	double Area=0;
 	
 	
@@ -180,6 +183,22 @@ double Numerics::trapezoidal(double (*f)(double, double, double), double ax, dou
 	int Nstepx=abs((bx-ax)/h);
 	int Nstepy=abs((by-ay)/h);	
 	int Nstepz=abs((bz-az)/h);	
+	
+	if (bx<ax)
+	{
+		swap(ax,bx);
+	};
+	
+	if (by<ay)
+	{
+		swap(ay,by);
+	};
+	
+	if (bz<az)
+	{
+		swap(az,bz);
+	};
+	
 	double Area=0;
 	
 	
