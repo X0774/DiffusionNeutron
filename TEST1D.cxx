@@ -42,7 +42,7 @@ int main(int argc, char **argv)
 	double n;
 	for (p=0;p<N;++p)
 	{
-		a[p]=num.trapezoidal(Int,0,L,0.0001); 
+		a[p]=num.integrationSimpsRule(Int,0,L,0.0001); 
 		cout << a[p] << "	";
 	}
 	
