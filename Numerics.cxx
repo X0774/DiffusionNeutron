@@ -86,6 +86,29 @@ double Numerics::integration(double (*func)(double), double a, double b, double 
 	
 }
 
+double Numerics::integrationSimpsRule(double (*func)(double), double a, double b, double h) //TO ADD double t0, (*func)(double, double)
+{
+	/**Simpson 1/3 rule for integration*/
+	int Nstep=abs(b-a)/(2*h);
+	
+	if (b<a)
+	{
+		double z=b;
+		b=a;
+		a=z;
+	}
+
+	double sum=func(a)+func(b);
+	
+	for (int i=1;i<Nstep;++i)
+	{
+		sum=sum+2*func(a+2*i*h)+4*func(a+(2*i-1)*h);
+	};
+	sum=sum-2*func(a+2*Nstep*h);
+	
+	return h*sum*1/3;
+}
+
 double Numerics::bisection(double (*f)(double), double a, double b, double error)
 {
 	/**Simple Root Finding algorythm that uses bisection; it solves between a and b; if f has more than one 0 between a and b it may not give any result*/
