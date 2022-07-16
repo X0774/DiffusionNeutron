@@ -88,7 +88,7 @@ double Numerics::integration(double (*func)(double), double a, double b, double 
 
 double Numerics::integrationSimpsRule(double (*func)(double), double a, double b, double h) //TO ADD double t0, (*func)(double, double)
 {
-	/**Simpson 1/3 rule for integration*/
+	/**Simpson 1/3 rule for integration. It integrates func from a to b with a step distance of h*/
 	int Nstep=abs(b-a)/(2*h);
 	
 	if (b<a)
