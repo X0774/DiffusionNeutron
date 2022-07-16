@@ -1,0 +1,32 @@
+\hypertarget{_numerics_8h_source}{}\doxysection{C\+:/\+Users/user/\+Desktop/\+UNIVERSITA\+\_\+\+ANNO3/\+MASTER/\+Projects/\+PROGETTO/\+Numerics.h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef NUMERICS}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define NUMERICS}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{comment}{/* A simple class of useful numerical methods developed by Xotta Francesco}}
+\DoxyCodeLine{5 \textcolor{comment}{ * }}
+\DoxyCodeLine{6 \textcolor{comment}{ */}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9  \textcolor{keyword}{class }\mbox{\hyperlink{class_numerics}{Numerics}}}
+\DoxyCodeLine{10 \{}
+\DoxyCodeLine{11     \textcolor{keyword}{public}:}
+\DoxyCodeLine{12         \textcolor{keywordtype}{double} \mbox{\hyperlink{class_numerics_a9e975646136940f0765d33c22b6e3bc5}{derivative}} (\textcolor{keywordtype}{double} (*func)(\textcolor{keywordtype}{double}), \textcolor{keywordtype}{double} dx, \textcolor{keywordtype}{double} pointx);}
+\DoxyCodeLine{13         \textcolor{keywordtype}{double} \mbox{\hyperlink{class_numerics_a440319129cbc7d593b1b7d3107e888cb}{diffEq}} (\textcolor{keywordtype}{double} (*func) (\textcolor{keywordtype}{double},\textcolor{keywordtype}{double}), \textcolor{keywordtype}{double} a, \textcolor{keywordtype}{double} b, \textcolor{keywordtype}{double} iniCond, \textcolor{keywordtype}{double} h);}
+\DoxyCodeLine{14         \textcolor{keywordtype}{double} \mbox{\hyperlink{class_numerics_ae2957cbb19935651fada5344e294f956}{secDifferentialEq}} (\textcolor{keywordtype}{double} (*func)(\textcolor{keywordtype}{double}, \textcolor{keywordtype}{double}), \textcolor{keywordtype}{double} (*func2)(\textcolor{keywordtype}{double},\textcolor{keywordtype}{double}), \textcolor{keywordtype}{double} a, \textcolor{keywordtype}{double} b, \textcolor{keywordtype}{double} iniCond, \textcolor{keywordtype}{double} iniCondDer, \textcolor{keywordtype}{double} h);}
+\DoxyCodeLine{15         \textcolor{keywordtype}{double} \mbox{\hyperlink{class_numerics_a717ea648b2ed270cbf533d46853e0a3c}{integration}}(\textcolor{keywordtype}{double} (*func)(\textcolor{keywordtype}{double}), \textcolor{keywordtype}{double} a, \textcolor{keywordtype}{double} b, \textcolor{keywordtype}{double} h);}
+\DoxyCodeLine{16         \textcolor{keywordtype}{double} \mbox{\hyperlink{class_numerics_ad64d212e231a0558308bc342725f7d74}{integrationSimpsRule}}(\textcolor{keywordtype}{double} (*func)(\textcolor{keywordtype}{double}), \textcolor{keywordtype}{double} a, \textcolor{keywordtype}{double} b, \textcolor{keywordtype}{double} h);}
+\DoxyCodeLine{17         \textcolor{keywordtype}{double} \mbox{\hyperlink{class_numerics_aa75a9cb63eda5db6f04543aea030dc2c}{bisection}}(\textcolor{keywordtype}{double} (*f)(\textcolor{keywordtype}{double}), \textcolor{keywordtype}{double} a, \textcolor{keywordtype}{double} b, \textcolor{keywordtype}{double} error);}
+\DoxyCodeLine{18         \textcolor{keywordtype}{double} \mbox{\hyperlink{class_numerics_a3c01fb0b7e346f05753b9e9b83afe1c3}{trapezoidal}}(\textcolor{keywordtype}{double} (*f)(\textcolor{keywordtype}{double}), \textcolor{keywordtype}{double} a, \textcolor{keywordtype}{double} b, \textcolor{keywordtype}{double} h);}
+\DoxyCodeLine{19         \textcolor{keywordtype}{double} \mbox{\hyperlink{class_numerics_a3c01fb0b7e346f05753b9e9b83afe1c3}{trapezoidal}}(\textcolor{keywordtype}{double} (*f)(\textcolor{keywordtype}{double}, \textcolor{keywordtype}{double}), \textcolor{keywordtype}{double} ax, \textcolor{keywordtype}{double} bx, \textcolor{keywordtype}{double} ay, \textcolor{keywordtype}{double} by, \textcolor{keywordtype}{double} h);}
+\DoxyCodeLine{20         \textcolor{keywordtype}{double} \mbox{\hyperlink{class_numerics_a3c01fb0b7e346f05753b9e9b83afe1c3}{trapezoidal}}(\textcolor{keywordtype}{double} (*f)(\textcolor{keywordtype}{double}, \textcolor{keywordtype}{double}, \textcolor{keywordtype}{double}), \textcolor{keywordtype}{double} ax, \textcolor{keywordtype}{double} bx, \textcolor{keywordtype}{double} ay, \textcolor{keywordtype}{double} by, \textcolor{keywordtype}{double} az, \textcolor{keywordtype}{double} bz, \textcolor{keywordtype}{double} h);}
+\DoxyCodeLine{21         \textcolor{keywordtype}{double} \mbox{\hyperlink{class_numerics_a153fe1fdc3935d1fa6581cbe37082a15}{newton}}(\textcolor{keywordtype}{double} (*func)(\textcolor{keywordtype}{double}), \textcolor{keywordtype}{double} (*funcprime)(\textcolor{keywordtype}{double}), \textcolor{keywordtype}{double} p0, \textcolor{keywordtype}{double} err);}
+\DoxyCodeLine{22     \textcolor{keyword}{private}:}
+\DoxyCodeLine{23         \textcolor{keywordtype}{double} RK4Alg (\textcolor{keywordtype}{double} (*func) (\textcolor{keywordtype}{double},\textcolor{keywordtype}{double}), \textcolor{keywordtype}{double} t, \textcolor{keywordtype}{double} y, \textcolor{keywordtype}{double} h);}
+\DoxyCodeLine{24 \};}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

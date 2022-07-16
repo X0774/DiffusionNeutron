@@ -1,0 +1,94 @@
+\hypertarget{class_numerics}{}\doxysection{Numerics Class Reference}
+\label{class_numerics}\index{Numerics@{Numerics}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_numerics_a9e975646136940f0765d33c22b6e3bc5}{derivative}} (double($\ast$func)(double), double dx, double pointx)
+\item 
+double \mbox{\hyperlink{class_numerics_a440319129cbc7d593b1b7d3107e888cb}{diff\+Eq}} (double($\ast$func)(double, double), double a, double b, double ini\+Cond, double h)
+\item 
+double \mbox{\hyperlink{class_numerics_ae2957cbb19935651fada5344e294f956}{sec\+Differential\+Eq}} (double($\ast$func)(double, double), double($\ast$func2)(double, double), double a, double b, double ini\+Cond, double ini\+Cond\+Der, double h)
+\item 
+double \mbox{\hyperlink{class_numerics_a717ea648b2ed270cbf533d46853e0a3c}{integration}} (double($\ast$func)(double), double a, double b, double h)
+\item 
+double \mbox{\hyperlink{class_numerics_ad64d212e231a0558308bc342725f7d74}{integration\+Simps\+Rule}} (double($\ast$func)(double), double a, double b, double h)
+\item 
+double \mbox{\hyperlink{class_numerics_aa75a9cb63eda5db6f04543aea030dc2c}{bisection}} (double($\ast$f)(double), double a, double b, double error)
+\item 
+double \mbox{\hyperlink{class_numerics_a3c01fb0b7e346f05753b9e9b83afe1c3}{trapezoidal}} (double($\ast$f)(double), double a, double b, double h)
+\item 
+double \mbox{\hyperlink{class_numerics_ad15496923099034592b1318a6c4741e1}{trapezoidal}} (double($\ast$f)(double, double), double ax, double bx, double ay, double by, double h)
+\item 
+double \mbox{\hyperlink{class_numerics_a534cd8dbd5eac11c26eeb236263c43ef}{trapezoidal}} (double($\ast$f)(double, double, double), double ax, double bx, double ay, double by, double az, double bz, double h)
+\item 
+double \mbox{\hyperlink{class_numerics_a153fe1fdc3935d1fa6581cbe37082a15}{newton}} (double($\ast$func)(double), double($\ast$funcprime)(double), double p0, double err)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_numerics_aa75a9cb63eda5db6f04543aea030dc2c}\label{class_numerics_aa75a9cb63eda5db6f04543aea030dc2c}} 
+\index{Numerics@{Numerics}!bisection@{bisection}}
+\index{bisection@{bisection}!Numerics@{Numerics}}
+\doxysubsubsection{\texorpdfstring{bisection()}{bisection()}}
+{\footnotesize\ttfamily double Numerics\+::bisection (\begin{DoxyParamCaption}\item[{double($\ast$)(double)}]{f,  }\item[{double}]{a,  }\item[{double}]{b,  }\item[{double}]{error }\end{DoxyParamCaption})}
+
+Simple Root Finding algorythm that uses bisection; it solves between a and b; if f has more than one 0 between a and b it may not give any result\mbox{\Hypertarget{class_numerics_a9e975646136940f0765d33c22b6e3bc5}\label{class_numerics_a9e975646136940f0765d33c22b6e3bc5}} 
+\index{Numerics@{Numerics}!derivative@{derivative}}
+\index{derivative@{derivative}!Numerics@{Numerics}}
+\doxysubsubsection{\texorpdfstring{derivative()}{derivative()}}
+{\footnotesize\ttfamily double Numerics\+::derivative (\begin{DoxyParamCaption}\item[{double($\ast$)(double)}]{func,  }\item[{double}]{dx,  }\item[{double}]{pointx }\end{DoxyParamCaption})}
+
+A simple 5 points formula that gives the derivative of func in pointx using dx as small distance\mbox{\Hypertarget{class_numerics_a440319129cbc7d593b1b7d3107e888cb}\label{class_numerics_a440319129cbc7d593b1b7d3107e888cb}} 
+\index{Numerics@{Numerics}!diffEq@{diffEq}}
+\index{diffEq@{diffEq}!Numerics@{Numerics}}
+\doxysubsubsection{\texorpdfstring{diffEq()}{diffEq()}}
+{\footnotesize\ttfamily double Numerics\+::diff\+Eq (\begin{DoxyParamCaption}\item[{double($\ast$)(double, double)}]{func,  }\item[{double}]{a,  }\item[{double}]{b,  }\item[{double}]{ini\+Cond,  }\item[{double}]{h }\end{DoxyParamCaption})}
+
+RK4 Differential Equation Solver; dy/dt=func(t,y) from a to b with y(a)=ini\+Cond with h=distance in each step\mbox{\Hypertarget{class_numerics_a717ea648b2ed270cbf533d46853e0a3c}\label{class_numerics_a717ea648b2ed270cbf533d46853e0a3c}} 
+\index{Numerics@{Numerics}!integration@{integration}}
+\index{integration@{integration}!Numerics@{Numerics}}
+\doxysubsubsection{\texorpdfstring{integration()}{integration()}}
+{\footnotesize\ttfamily double Numerics\+::integration (\begin{DoxyParamCaption}\item[{double($\ast$)(double)}]{func,  }\item[{double}]{a,  }\item[{double}]{b,  }\item[{double}]{h }\end{DoxyParamCaption})}
+
+Simpson 3/8 rule for integration; fast, but not very precise. It integrates func from a to b with a step distance of h\mbox{\Hypertarget{class_numerics_ad64d212e231a0558308bc342725f7d74}\label{class_numerics_ad64d212e231a0558308bc342725f7d74}} 
+\index{Numerics@{Numerics}!integrationSimpsRule@{integrationSimpsRule}}
+\index{integrationSimpsRule@{integrationSimpsRule}!Numerics@{Numerics}}
+\doxysubsubsection{\texorpdfstring{integrationSimpsRule()}{integrationSimpsRule()}}
+{\footnotesize\ttfamily double Numerics\+::integration\+Simps\+Rule (\begin{DoxyParamCaption}\item[{double($\ast$)(double)}]{func,  }\item[{double}]{a,  }\item[{double}]{b,  }\item[{double}]{h }\end{DoxyParamCaption})}
+
+Simpson 1/3 rule for integration; It integrates func from a to b with a step distance of h\mbox{\Hypertarget{class_numerics_a153fe1fdc3935d1fa6581cbe37082a15}\label{class_numerics_a153fe1fdc3935d1fa6581cbe37082a15}} 
+\index{Numerics@{Numerics}!newton@{newton}}
+\index{newton@{newton}!Numerics@{Numerics}}
+\doxysubsubsection{\texorpdfstring{newton()}{newton()}}
+{\footnotesize\ttfamily double Numerics\+::newton (\begin{DoxyParamCaption}\item[{double($\ast$)(double)}]{func,  }\item[{double($\ast$)(double)}]{funcprime,  }\item[{double}]{p0,  }\item[{double}]{err }\end{DoxyParamCaption})}
+
+Simple Root Finding algorythm that uses Newton method; it requires a function func and its derivative funcprime. It also wants a starting point p0\mbox{\Hypertarget{class_numerics_ae2957cbb19935651fada5344e294f956}\label{class_numerics_ae2957cbb19935651fada5344e294f956}} 
+\index{Numerics@{Numerics}!secDifferentialEq@{secDifferentialEq}}
+\index{secDifferentialEq@{secDifferentialEq}!Numerics@{Numerics}}
+\doxysubsubsection{\texorpdfstring{secDifferentialEq()}{secDifferentialEq()}}
+{\footnotesize\ttfamily double Numerics\+::sec\+Differential\+Eq (\begin{DoxyParamCaption}\item[{double($\ast$)(double, double)}]{func,  }\item[{double($\ast$)(double, double)}]{func2,  }\item[{double}]{a,  }\item[{double}]{b,  }\item[{double}]{ini\+Cond,  }\item[{double}]{ini\+Cond\+Der,  }\item[{double}]{h }\end{DoxyParamCaption})}
+
+Simple second order differential equation solver, with y\textquotesingle{}\textquotesingle{}=func2$\ast$y\textquotesingle{}+func(t,y) from a to b, with y(a)=ini\+Cond, y\textquotesingle{}(a)=ini\+Cond\+Der with h=distance in each step\mbox{\Hypertarget{class_numerics_a3c01fb0b7e346f05753b9e9b83afe1c3}\label{class_numerics_a3c01fb0b7e346f05753b9e9b83afe1c3}} 
+\index{Numerics@{Numerics}!trapezoidal@{trapezoidal}}
+\index{trapezoidal@{trapezoidal}!Numerics@{Numerics}}
+\doxysubsubsection{\texorpdfstring{trapezoidal()}{trapezoidal()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily double Numerics\+::trapezoidal (\begin{DoxyParamCaption}\item[{double($\ast$)(double)}]{f,  }\item[{double}]{a,  }\item[{double}]{b,  }\item[{double}]{h }\end{DoxyParamCaption})}
+
+Integral solver that uses the trapezoidal method; it solves between a and b with step distance h\mbox{\Hypertarget{class_numerics_ad15496923099034592b1318a6c4741e1}\label{class_numerics_ad15496923099034592b1318a6c4741e1}} 
+\index{Numerics@{Numerics}!trapezoidal@{trapezoidal}}
+\index{trapezoidal@{trapezoidal}!Numerics@{Numerics}}
+\doxysubsubsection{\texorpdfstring{trapezoidal()}{trapezoidal()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily double Numerics\+::trapezoidal (\begin{DoxyParamCaption}\item[{double($\ast$)(double, double)}]{f,  }\item[{double}]{ax,  }\item[{double}]{bx,  }\item[{double}]{ay,  }\item[{double}]{by,  }\item[{double}]{h }\end{DoxyParamCaption})}
+
+Integral solver that uses the trapezoidal method; it solves between \mbox{[}ax,bx\mbox{]} and \mbox{[}ay,by\mbox{]} with step distance h; it solves for y for each step of x\mbox{\Hypertarget{class_numerics_a534cd8dbd5eac11c26eeb236263c43ef}\label{class_numerics_a534cd8dbd5eac11c26eeb236263c43ef}} 
+\index{Numerics@{Numerics}!trapezoidal@{trapezoidal}}
+\index{trapezoidal@{trapezoidal}!Numerics@{Numerics}}
+\doxysubsubsection{\texorpdfstring{trapezoidal()}{trapezoidal()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily double Numerics\+::trapezoidal (\begin{DoxyParamCaption}\item[{double($\ast$)(double, double, double)}]{f,  }\item[{double}]{ax,  }\item[{double}]{bx,  }\item[{double}]{ay,  }\item[{double}]{by,  }\item[{double}]{az,  }\item[{double}]{bz,  }\item[{double}]{h }\end{DoxyParamCaption})}
+
+Integral solver that uses the trapezoidal method; it solves between \mbox{[}ax,bx\mbox{]}, \mbox{[}ay,by\mbox{]}, \mbox{[}az,bz\mbox{]} with step distance h; it solves for z for each step of y, which solves for each step of x
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/user/\+Desktop/\+UNIVERSITA\+\_\+\+ANNO3/\+MASTER/\+Projects/\+PROGETTO/Numerics.\+h\item 
+C\+:/\+Users/user/\+Desktop/\+UNIVERSITA\+\_\+\+ANNO3/\+MASTER/\+Projects/\+PROGETTO/Numerics.\+cxx\end{DoxyCompactItemize}
