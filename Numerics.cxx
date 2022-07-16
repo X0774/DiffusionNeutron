@@ -123,14 +123,19 @@ double Numerics::bisection(double (*f)(double), double a, double b, double error
 		}	
 };
 
-double Numerics::newton(double (*func)(double), double (*funcprime)(double), double p0, double err)
+double Numerics::newton(double (*func)(double), double (*funcprime)(double), double p0, double err, int Nloop)
 {
 	/**Simple Root Finding algorythm that uses Newton method; it requires a function func and its derivative funcprime. It also wants a starting point p0*/
 	double p=p0-func(p0)/funcprime(p0);
+	if (Nloop==0)
+	{
+		cout <<"There is no 0 that could be found in the suggested number of loops"<<endl;
+		return p0;
+	};
 	if ((func(p) == 0) || (abs(p-p0) < err))
 		return p;
 	else 
-		return newton(func,funcprime,p,err);
+		return newton(func,funcprime,p,err,Nloop-1);
 };
 
 double Numerics::trapezoidal(double (*f)(double), double a, double b, double h)
