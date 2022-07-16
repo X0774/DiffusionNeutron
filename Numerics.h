@@ -18,7 +18,7 @@
 		double trapezoidal(double (*f)(double), double a, double b, double h);
 		double trapezoidal(double (*f)(double, double), double ax, double bx, double ay, double by, double h);
 		double trapezoidal(double (*f)(double, double, double), double ax, double bx, double ay, double by, double az, double bz, double h);
-		double newton(double (*func)(double), double (*funcprime)(double), double p0, double err);
+		double newton(double (*func)(double), double (*funcprime)(double), double p0, double err, int Nloop);
 	private:
 		double RK4Alg (double (*func) (double,double), double t, double y, double h);
 };
