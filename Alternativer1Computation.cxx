@@ -11,11 +11,13 @@ double A=1; //it serves no purpose but existing
 double alpha=0; //If we want criticality
 double k=0;
 
-double Rfunc (double r){
+double Rfunc (double r)
+{
 	return (A*sin(k*r))/r; 
 };
 
-double Rfuncprime (double r){
+double Rfuncprime (double r)
+{
 	Numerics num;
 	return num.derivative(Rfunc,0.00001,r);
 };
