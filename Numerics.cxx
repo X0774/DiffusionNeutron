@@ -30,11 +30,11 @@ double Numerics::diffEq (double (*func) (double,double), double a, double b, dou
 	double yii;
 	double t=a;
 	for (int i=0; i<Nstep;++i)
-		{
-			yii=RK4Alg(func,t,yi,h);
-			t=t+h;
-			yi=yii;
-		}
+	{
+		yii=RK4Alg(func,t,yi,h);
+		t=t+h;
+		yi=yii;
+	}
 	return yii;	
 };
 
