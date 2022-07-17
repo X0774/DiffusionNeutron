@@ -1,7 +1,7 @@
 /*
  *i want to preface this code by saying that the original Maple code does not give the same result as this code, there is no way it can
  * 1) The a[p] are too small of a factor of 1/2; I solved the integral with various tools and observed this
- * I can not obtain the results of the paper, I probably messed with the constants
+ * Actually the paper contains a simplified formula for a[p] which agrees with my results :\
  */
 
 
