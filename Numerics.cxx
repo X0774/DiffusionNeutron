@@ -26,6 +26,9 @@ double Numerics::diffEq (double (*func) (double,double), double a, double b, dou
 	/**RK4 Differential Equation Solver; dy/dt=func(t,y) from a to b with y(a)=iniCond with h=distance in each step*/
 	int Nstep=abs(b-a)/h;
 	
+	if (b<a)
+		swap(a,b);
+	
 	double yi=iniCond;
 	double yii;
 	double t=a;
@@ -42,10 +45,8 @@ double Numerics::secDifferentialEq (double (*func)(double, double), double (*fun
 	/**Simple second order differential equation solver, with y''=func2*y'+func(t,y) from a to b, with y(a)=iniCond, y'(a)=iniCondDer with h=distance in each step*/
 	int Nstep=abs(b-a)/h;
 	
-	/*if (b<a)
-	{
+	if (b<a)
 		swap(a,b);
-	}*/
 	
 	double z=iniCond;
 	double x=z+iniCondDer*h; //yii=yi+y'*dx	
@@ -85,9 +86,7 @@ double Numerics::integrationSimpsRule(double (*func)(double), double a, double b
 	int Nstep=abs(b-a)/(2*h);
 	
 	if (b<a)
-	{
 		swap(a,b);
-	}
 
 	double sum=func(a)+func(b);
 	
@@ -106,9 +105,7 @@ double Numerics::bisection(double (*f)(double), double a, double b, double error
 	double newpar=a+(b-a)/2;
 	
 	if (b<a)
-	{
 		swap(a,b);
-	}
 	
 	if (abs(b-a)<abs(error) || abs(f(newpar))==0)
 		return newpar;
