@@ -22,7 +22,7 @@ double Int (double x)
 	return 2*Function(x)*sin(p*M_PI*x/L)/L;
 }
 
-double neutrondensity(double t,double x,double y,double z)
+double NeutronDensity(double t,double x,double y,double z)
 {
 	double n=0;
 	for (p=1;p<N;++p)
@@ -92,10 +92,9 @@ int main(int argc, char **argv)
 	cin >> dt;
 	newfile.open("output.txt",ios::out);
 	newfile << "n(x,t)" << "	" << "t" << "	" << "x" << endl;
-	plot(neutrondensity,0,tfin,0,L,0,0,0,0,dt,dx);
+	plot(NeutronDensity,0,tfin,0,L,0,0,0,0,dt,dx);
 	newfile.close();
 	
 	delete[] a;
 	return 0;
 }
-
