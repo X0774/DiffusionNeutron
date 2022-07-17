@@ -5,6 +5,7 @@
 #include "Numerics.h"
 using namespace std;
 
+//DEFINING VARIABLES THAT MUST BE IN ALL SCOPES
 double alpha,eta,mu,lambdat,r1,R;
 
 double CriticalRadius(double r)
@@ -50,10 +51,9 @@ int main(int argc, char **argv)
 	alpha=num.newton(NewAlpha,AlphaPrime, 0, 1e-8,100);
 	
 	//COMPUTING ns
-	double n;
+	double n, dx,tfin,dt,A;
 	double k = sqrt (( eta + alpha ) / mu ) ;
 	cout << "This is now a small test for x and t; please write dx, final t and dt" << endl;
-	double dx,tfin,dt,A;
 	cout << "dx: ";
 	cin >> dx;
 	cout << "t: ";
