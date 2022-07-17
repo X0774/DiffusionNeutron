@@ -14,21 +14,21 @@ using namespace std;
 
 double alpha,eta,mu,lambdat,r1,R;
 
-double criticalradius(double r)
+double CriticalRadius(double r)
 {
 	return -1 + 3*r/lambdat/2 + r*sqrt(eta/mu)*cos(r*sqrt(eta/mu))/sin(r*sqrt(eta/mu));
 };
 
-double newalpha (double a)
+double NewAlpha (double a)
 {
 	//return -1 + 3*(R/lambdat)/2 + R*sqrt((eta+a)/mu)*cos(R*sqrt((eta+a)/mu))/sin(R*sqrt((eta+a)/mu)); 
 	return -1 + sqrt((eta+a)/mu) * R * (cos (R* sqrt((eta+a)/mu))/ sin ( R*sqrt((eta+a)/mu)) ) +(3/2) * R / lambdat;
 };
 
-double alphaprime(double r)
+double AlphaPrime(double r)
 {
 	Numerics num;
-	return num.derivative(newalpha, 0.00001, r);
+	return num.derivative(NewAlpha, 0.00001, r);
 };
 
 int main(int argc, char **argv)
@@ -39,7 +39,7 @@ int main(int argc, char **argv)
 	newfile.open("config.txt",ios::in); 
 	if (newfile.is_open())
 	{
-		newfile >> tau >> lambdaf >> lambdat >> nu; // 8.6349e-9 0.1689*100 0.0360*100 2.637
+		newfile >> tau >> lambdaf >> lambdat >> nu; // 8.6349e-9 0.1689e2 0.0360e2 2.637
     	} else
     	{
 		exit(EXIT_FAILURE);
@@ -51,10 +51,10 @@ int main(int argc, char **argv)
 	mu = lambdat* v /3; 
 	eta= v *( nu -1) / lambdaf;
 	Numerics num;
-	r1=num.bisection(criticalradius,0,10,1e-5);
+	r1=num.bisection(CriticalRadius,0,10,1e-5);
 	cout << endl;
 	R=8.5;
-	alpha=num.newton(newalpha,alphaprime, 0, 1e-8,100);
+	alpha=num.newton(NewAlpha,AlphaPrime, 0, 1e-8,100);
 	
 	//COMPUTING ns
 	double n;
