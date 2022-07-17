@@ -33,6 +33,7 @@ double Numerics::diffEq (double (*func) (double,double), double a, double b, dou
 		{
 			yii=RK4Alg(func,t,yi,h);
 			t=t+h;
+			yi=yii;
 		}
 	return yii;	
 };
