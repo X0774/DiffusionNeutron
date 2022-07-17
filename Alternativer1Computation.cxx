@@ -22,7 +22,7 @@ double Rfuncprime (double r)
 	return num.derivative(Rfunc,0.00001,r);
 };
 
-double neumannBC(double r)
+double NeumannBC(double r)
 {
 	return Rfuncprime(r)+3*Rfunc(r)/(2*lambdat);
 };
@@ -48,7 +48,7 @@ int main(int argc, char **argv)
 	eta= v *( nu -1) / lambdaf;
 	k=sqrt((eta+alpha)/mu);
 	Numerics num;
-	r1=num.bisection(neumannBC,0,10,1e-5);
+	r1=num.bisection(NeumannBC,0,10,1e-5);
 	cout <<r1<< endl;
 	return 0;
 }
