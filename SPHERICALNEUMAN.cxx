@@ -1,10 +1,3 @@
-/*
- * Symbolic computations are not supported and thus I will not follow some of the computations; I will also need to "cheat" the system in order to obtain some of the results
- * that could have been obtained with Mathematica, Matlab or Maple
- * 
- * For C++ we have SymbolicC++, which is a very good way to implement symbolic computations (but, since the numerical part is literally what the project is about, it would be cheating!)
- */ 
-
 #include <iostream>
 #include <cmath> 
 #include <math.h> 
